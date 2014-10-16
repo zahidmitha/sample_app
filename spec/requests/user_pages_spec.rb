@@ -35,7 +35,6 @@ describe "User pages" do
                 it { should have_content('error') }
         end
 
-
         it "should not create a user" do
           expect { click_button submit }.not_to change(User, :count)
         end
@@ -65,11 +64,11 @@ describe "User pages" do
   end
 
   describe "edit" do
-    let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user) }
       before do
-        sign_in user
-        visit edit_user_path(user)
-      end
+            sign_in user
+            visit edit_user_path(user)
+          end
 
       describe "page" do
         it { should have_content("Update your profile") }
