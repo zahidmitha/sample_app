@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  before { @user = User.new(name: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")}
+  before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")}
 
   subject { @user }
   it { should respond_to(:name) }
@@ -97,7 +97,7 @@ describe User do
 
     describe "remember token" do
       before { @user.save }
-      its(:remember_token) { should_not be_blank}
+      its(:remember_token) { should_not be_blank }
     end
 
 end
